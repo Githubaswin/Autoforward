@@ -8,6 +8,7 @@ from pyrogram import Client as ACE, idle
 import asyncio
 from logging.handlers import RotatingFileHandler
 from plugins.regix import restart_forwards
+from pyromod import listen
 
 RESATRT = True
 
