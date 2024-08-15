@@ -1,4 +1,4 @@
-git+https://github.com/pyrogram/pyrogram.git
+pyrofork
 tgcrypto
 pyromod==1.5
 pyropatch
