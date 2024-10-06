@@ -380,20 +380,7 @@ async def close(bot, update):
     await update.answer()
     await update.message.delete()
     
-@Client.on_message(filters.private & filters.command(['stop']))
-async def stop_forward(client, message):
-    user_id = message.from_user.id
-    sts = await message.reply('<code>Stoping...</code>')
-    await asyncio.sleep(0.5)
-    if not await db.is_forwad_exit(message.from_user.id):
-        return await sts.edit('**No Ongoing Forwards To Cancel**')
-    temp.lock[user_id] = False
-    temp.CANCEL[user_id] = True
-    mst = await db.get_forward_details(user_id)
-    msg = await client.get_messages(user_id, mst['msg_id'])
-    link = f"tg://openmessage?user_id={6648261085}&message_id={mst['msg_id']}"
-    await sts.edit(f"<b>Successfully Canceled </b>", disable_web_page_preview=True)
-        
+
 async def restart_pending_forwads(bot, user):
     user = user['user_id']
     settings = await db.get_forward_details(user)
