@@ -1,7 +1,6 @@
 pyrofork
 tgcrypto
 pyromod==1.5
-pyropatch
 humanize 
 motor==2.5.1
 TgCrypto
