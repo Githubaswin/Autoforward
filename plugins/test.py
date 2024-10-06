@@ -128,11 +128,6 @@ class CLIENT:
      await db.add_userbot(details)
      return True
 
-@Client.on_message(filters.private & filters.command('reset'))
-async def forward_tag(bot, m):
-   default = await db.get_configs("01")
-   await db.update_configs(m.from_user.id, default)
-   await m.reply("successfully settings reseted ✔️")
 
 @Client.on_message(filters.command('resetall') & filters.user(Config.BOT_OWNER_ID))
 async def resetall(bot, message):
